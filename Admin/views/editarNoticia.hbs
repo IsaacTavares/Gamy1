@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Editar Noticia</h1>
+<form action="/editarNoticia/{{noticia.id}}" method="POST">
+  <div class="form-group">
+    <label for="titulo">Título</label>
+    <input type="text" class="form-control" id="titulo" name="titulo" value="{{noticia.titulo}}" required>
+  </div>
+  <div class="form-group">
+    <label for="informacion">Información</label>
+    <textarea class="form-control" id="informacion" name="informacion" required>{{noticia.informacion}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-success">Actualizar Noticia</button>
+</form>
+<a href="/noticias">Volver</a>
+</body>
+</html>

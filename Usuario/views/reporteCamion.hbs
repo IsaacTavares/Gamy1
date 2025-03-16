@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportar Camión</title>
+</head>
+
+<body>
+    <h1>Reportar Camión</h1>
+
+    <form id="reportesCamion" action="/guardar-reporte-camion" method="POST" enctype="multipart/form-data" >
+        <label for="nombre">Nombre de Usuario:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br>    
+
+        <label for="unidad">Número de Unidad:</label>
+        <input type="text" id="unidad" name="unidad" required>
+        <br>
+
+        <label for="ruta">Ruta:</label>
+        <input type="text" id="ruta" name="ruta" required>
+        <br>
+
+        <label for="descripcion">Descripción del Problema:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" required></textarea>
+        <br>
+
+        <label for="foto">Subir Fotografía:</label>
+        <input type="file" id="foto" name="foto" accept="image/*" required>
+        <br>
+
+        <button type="submit">Enviar Reporte</button>
+    </form>
+
+
+
+
+<script>
+    document.getElementById("reportesCamion").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        fetch(this.action, {
+            method: this.method,
+            body: new FormData(this)
+        })
+        .then(response => {
+            if (response.ok) {
+                alert("Se envió el reporte enviado con éxito.");
+                window.location.href = "/index"; 
+            } else {
+                alert("Error al enviar el reporte. Inténtalo de nuevo.");
+            }
+        })
+        .catch(error => {
+            alert("Error en la conexión.");
+            console.error("Error:", error);
+        });
+    });
+</script>
+
+
+    <br>
+    <a href="/index">Volver</a>
+</body>
+
+</html>

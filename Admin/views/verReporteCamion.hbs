@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Completo</title>
+</head>
+<body>
+    <h1>Reporte Completo de Camión</h1>
+
+    <p><strong>Nombre:</strong> {{reporte.nombre}}</p>
+    <p><strong>Unidad:</strong> {{reporte.unidad}}</p>
+    <p><strong>Ruta:</strong> {{reporte.ruta}}</p>
+    <p><strong>Descripción:</strong> {{reporte.descripcion}}</p>
+    <p><strong>Foto:</strong></p>
+    <img src="/imagen-reporte-camion/{{reporte.id}}" alt="Foto Reporte" width="300">
+
+    <br><br>
+    <form action="/eliminar-reporte-camion/{{reporte.id}}" method="POST" onsubmit="return confirm('¿Estás seguro de eliminar este reporte?');">
+
+        <button type="submit">Eliminar Reporte</button>
+    </form>
+
+    <br>
+    <a href="/home"><button>Volver al Panel</button></a>
+</body>
+</html>

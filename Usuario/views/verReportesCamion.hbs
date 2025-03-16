@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Camiones</title>
+</head>
+<body>
+    <h1>Lista de Reportes de Camiones</h1>
+
+    {{#each reportes}}
+        <div>
+            <h2>{{nombre}} - Unidad: {{unidad}}</h2>
+            <p><strong>Ruta:</strong> {{ruta}}</p>
+            <p><strong>Descripción:</strong> {{descripcion}}</p>
+            {{#if foto}}
+                <img src="/uploads/{{foto}}" alt="Foto del reporte" width="200">
+            {{/if}}
+            <hr>
+        </div>
+    {{/each}}
+
+    <br>
+    <a href="/home">Volver</a>
+</body>
+</html>

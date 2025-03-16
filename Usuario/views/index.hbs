@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <h1>Bienvenido {{user.name}}</h1>
+    
+    <a href="/report">
+        <button>Reportar Parada</button>
+    </a>
+
+    <a href="/reporteCamion">
+        <button>Reportar Camión</button>
+    </a>
+
+    <a href="/logout">
+        <button>Cerrar Sesión</button>
+    </a>
+
+
+    <h2>Noticias</h2>
+    {{#each noticias}}
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <h3>{{titulo}}</h3>
+            <p>{{informacion}}</p>
+            <img src="/imagen/{{id}}" alt="{{titulo}}" width="300">
+
+            <p><small>Publicado el: {{fecha}}</small></p>
+        </div>
+    {{/each}}
+</body>
+</html>

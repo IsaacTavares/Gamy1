@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias</title>
+</head>
+<body>
+    
+<h1>Noticias</h1>
+<a href="/nuevaPubli" class="btn btn-primary">Agregar Nueva Noticia</a>
+
+{{#if reports.length}}
+  <table border="1" >
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Información</th>
+        <th>Imagen</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each reports}}
+        <tr>
+          <td>{{this.titulo}}</td>
+          <td>{{this.informacion}}</td>
+          <td><img src="/imagen/{{this.id}}" alt="{{this.titulo}}"></td>
+          <td>
+            <a href="/editarNoticia/{{this.id}}" class="btn btn-warning">Editar</a>
+            <a href="/eliminarNoticia/{{this.id}}" class="btn btn-danger">Eliminar</a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <a href="/home">Volver</a>
+{{else}}
+  <p>No hay noticias disponibles.</p>
+{{/if}}
+
+</body>
+</html>
