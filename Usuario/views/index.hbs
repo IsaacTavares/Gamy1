@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <!--Tipo de letra con Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        @media screen and (max-width: 850px) {
+            * {
+                padding: 20px;
+            }
+        }
+       
+    </style>
+    <title>Inicio</title>
+</head>
+<body>
+    <div class="contenedor-principal-usu">
+        <div class="contenedor-nav-usu">
+            <div class="nav-gamy">
+                <div class="espacio-titulo-nav">
+                    <h1 class="gamy-title-usu-nav">GAMY</h1>
+                    <h2 class="subtitulo-gamy-nav">Colabora-Optimiza</h2>  
+                </div>
+                <h1 class="user-welcome">Bienvenido {{user.name}}</h1>
+                <a href="/misReportes" class="ver-rep">
+                    Ver mis reportes
+                </a>
+                <a href="/logout">
+                    <button class="btn-c-sesion-usu">Cerrar Sesión</button>
+                </a>
+                
+            </div>
+        </div>
+        <div class="contenedor-derecho-usu">
+            <div class="contenedor-carrusel">
+                <div class="contenedor-generar-reportes">
+                    <div class="contenedor-reportes-paraderos">
+                        <img src="/img/qoygi1ks.png" alt="" class="reportes-paraderos-img">
+                        <p class="desc-contenedor-reportes">
+                            Crea un reporte sobre las anomalias que detectes en los paraderos
+                        </p>
+                        <a href="/reporteParada" class="btn-generar-reporte-usu">
+                           Reportar Paraderos
+                        </a>
+                    </div>
+                    <div class="contenedor-reportes-camion">
+                        <img src="/img/0k87ng5l.png" alt="" class="reportes-camion-img">
+                        <p class="desc-contenedor-reportes">
+                            Crea un reporte sobre las anomalias que detectes en la unidad de trasporte publico
+                        </p>
+                        <a href="/reporteCamion" class="btn-generar-reporte-usu">
+                            Reportar camion
+                         </a>
+                    </div>
+                </div>
+            </div>
+            
+
+            <div class="contenedor-general-publicaciones-usu">
+                <h2 class="titulo-publicaciones-usu">Publicaciones</h2>
+                <h3 class="subtitulo-publicaciones-usu">Conoce el trabajo que hacemos para ti</h3>
+
+                <div class="contenedor-publicaciones-usuario">
+                    {{#each noticias}}
+                    <div class="contenedor-publicacion-usu">
+                        <h3 class="titulo-not-usu">{{titulo}}</h3>
+                        <p>{{informacion}}</p>
+                        <img src="/imagen/{{id}}" alt="{{titulo}}" class="img-not-usu">
+                        <p><small>Publicado el: {{fecha}}</small></p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+            
+        </div>
+    </div>    
+</body>
+</html>

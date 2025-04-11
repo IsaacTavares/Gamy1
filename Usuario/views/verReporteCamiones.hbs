@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Reporte de Camión</title>
+</head>
+<body>
+    <h1>Detalles del Reporte de Camión</h1>
+
+    <h2>Información del Reporte</h2>
+    <p><strong>Nombre:</strong> {{reporte.nombre}}</p>
+    <p><strong>Unidad:</strong> {{reporte.unidad}}</p>
+    <p><strong>Ruta:</strong> {{reporte.ruta}}</p>
+    <p><strong>Descripción:</strong> {{reporte.descripcion}}</p>
+
+    <h3>Foto del Reporte</h3>
+    {{#if reporte.foto}}
+        <img src="/imagenCamion/{{reporte.id}}" alt="Foto del Reporte" />
+    {{else}}
+        <p>No hay foto disponible.</p>
+    {{/if}}
+
+
+    <h3>Estatus del Reporte</h3>
+    <p><strong>Estatus:</strong> {{reporte.estatus}}</p> 
+
+    <br>
+    <a href="/misReportes"><button>Volver a mis reportes</button></a>
+</body>
+</html>
+
+
+<!--Desarrollado por isaac -->
