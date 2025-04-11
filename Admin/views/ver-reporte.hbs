@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ver Reporte</title>
+</head>
+<body>
+    <h1>Reporte Completo</h1>
+    <p><strong>ID:</strong> {{report.id}}</p>
+    <p><strong>Ubicación:</strong> {{report.location}}</p>
+    <p><strong>Comentario:</strong> {{report.comment}}</p>
+
+    {{#if latitude}}
+        <a href="https://www.google.com/maps?q={{latitude}},{{longitude}}" target="_blank">
+            <button>Ver en Google Maps</button>
+        </a>
+    {{else}}
+        <p>Ubicación no disponible</p>
+    {{/if}}
+    
+
+    <br>
+    
+
+
+<form action="/actualizarEstatusParadero/{{report.id}}" method="POST">
+    {{#if (eq report.estatus "Enviado")}}
+        <button type="submit" name="estatus" value="Pendiente">Marcar como Pendiente</button>
+    {{else if (eq report.estatus "Pendiente")}}
+        <button type="submit" name="estatus" value="Resuelto">Marcar como Resuelto</button>
+    {{else if (eq report.estatus "Resuelto")}}
+        <p><strong>Reporte resuelto.</strong></p>
+    {{/if}}
+</form>
+
+{{#if (eq report.estatus "Resuelto")}}
+    <form action="/eliminar-reporte/{{report.id}}" method="POST"
+        onsubmit="return confirm('¿Estás seguro de eliminar este reporte?');">
+        <button type="submit">Eliminar Reporte</button>
+    </form>
+{{else}}
+    <button disabled>Eliminar Reporte</button>
+{{/if}}
+
+<p><strong>Estatus actual:</strong> {{report.estatus}}</p>
+
+
+
+
+<img src="/reportes/{{report.id}}/image" alt="Reporte de Parada" style="height: 300px; widht: 200px;">
+
+<br>
+    
+
+    <a href="/reporteParadas">Volver </a>
+</body>
+</html>

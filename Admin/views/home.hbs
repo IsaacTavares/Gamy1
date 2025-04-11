@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/gamy.css">
+    <!--Tipo de letra con Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+    </style>
+    <title>Inicio</title>
+</head>
+
+<body>
+     <div class="contenedor-principal-admin">
+        <div class="contenedor-nav-admin">
+            <div class="nav-gamy-ad">
+                <div class="espacio-titulo-nav-ad">
+                    <h1 class="gamy-title-admin-nav">GAMY</h1>
+                    <h2 class="subtitulo-gamy-nav-ad">Colabora-Optimiza</h2>  
+                </div>
+                <br>
+                <br>
+                <h1 class="admin-welcome">Bienvenido Administrador Uno</h1>
+                <br>
+                <br>
+                <a href="/noticias" class="ver-not-ad">
+                    Ver noticias
+                </a>
+                <a href="/logout">
+                    <button class="btn-c-sesion-admin">Cerrar Sesión</button>
+                </a>
+                
+            </div>
+        </div>
+
+
+        <div class="contenedor-derecho-admin">
+            <div class="contenedor-carrusel">
+                <div class="contenedor-ver-reportes">
+                    <div class="contenedor-reportes-paraderos">
+                        <br>
+                        
+                        <p>
+                            Revise frecuentemente los reportes realizados por los usuarios acerca de los paraderos
+                        </p>
+                        <br>
+                        <br>
+                        
+                        <a href="/reporteParadas" class="btn-ver-ad">
+                            Reportes de paraderos
+                        </a>
+                    </div>
+
+                     <div class="contenedor-reportes-camiones">
+                        <br>
+                        
+                        <p>
+                            Revise frecuentemente los reportes realizados por los usuarios acerca del estado de los camiones
+                        </p>
+                        <br>
+                        <br>
+                        
+                        <a href="/reporteCamiones" class="btn-ver-ad">
+                            Reportes de Autobuses
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor-usuarios">
+                <img src="/public/img/usu-icon.png" alt="" class="usu-img">
+                <div class="cont-info-usus">
+                    <p class="desc-contenedor-usu">
+                        Verifique a los usuarios registrados
+                    </p>
+                    <br>
+
+                    <a href="/usuarios" class="btn-ver-usu-ad">
+                        Ver usuarios
+                    </a>
+                </div>  
+            </div>
+        </div>
+     </div>
+    <h1>{{mensaje}}</h1>
+    <br>
+
+    
+</body>
+
+</html>

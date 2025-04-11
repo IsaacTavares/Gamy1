@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes de Unidad {{unidad}}</title>
+</head>
+<body>
+    <h1>Reportes de la Unidad {{unidad}}</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+                <th>Foto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each reportes}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{descripcion}}</td>
+                <td>{{created_at}}</td>
+                <td>
+                    {{#if foto}}
+                        <img src="/imagen-reporte-camion/{{id}}" alt="Foto Reporte" width="100">
+                    {{else}}
+                        Sin imagen
+                    {{/if}}
+                </td>
+                <td>
+                    <a href="/ver-reporte-camion/{{id}}">
+                        <button>Ver Reporte</button>
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="/reporteCamiones"><button>Volver a la lista de unidades</button></a>
+</body>
+</html>

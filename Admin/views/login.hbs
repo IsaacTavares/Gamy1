@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/gamy.css">
+    <!--Tipo de letra con Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+        }
+    </style>
+    <title>Inicio de Sesión</title>
+</head>
+    <body>
+        <div class="cont-principal">
+            <div class="cont-login-admin">
+                <h1 class="titulo-gamy">GAMY CMOV</h1>
+                <h2 class="bienvenido-mensaje">Bienvenido</h2>
+                {{#if error}}
+                    <p style="color: red;">{{error}}</p>
+                {{/if}}
+                <form action="/login" method="POST">
+                    <label class="email-titulo">Email:</label>
+                    <input type="email" name="email" required class="entry-email">
+                    <label>Contraseña:</label>
+                    <input type="password" name="password" required class="entry-pass">
+                    <br>
+                    <button type="submit" class="btn-iniciar">Iniciar Sesión</button>   
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
